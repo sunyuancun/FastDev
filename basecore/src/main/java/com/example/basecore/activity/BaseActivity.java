@@ -17,6 +17,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_base);
         root_layout = (RelativeLayout) findViewById(R.id.root_layout);
+        setBaseUI();
+    }
+
+    private void setBaseUI() {
         setStatusBar();
     }
 
