@@ -1,0 +1,17 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <!--<style name="TitleBar">-->
+        <!--<item name="android:layout_width">match_parent</item>-->
+        <!--<item name="android:layout_height">@dimen/titlebar_height</item>-->
+        <!--<item name="android:background">@color/colorPrimary</item>-->
+        <!--<item name="bgatitlebar_titleTextColor">@color/white</item>-->
+        <!--<item name="bgatitlebar_titleTextSize">@dimen/textSize_18</item>-->
+        <!--<item name="bgatitlebar_leftDrawable">@drawable/icon_back</item>-->
+    <!--</style>-->
+
+</resources>

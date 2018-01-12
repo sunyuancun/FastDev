@@ -8,8 +8,7 @@ common util
 1.状态栏
     https://github.com/gyf-dev/ImmersionBar
     https://github.com/laobie/StatusBarUtil
-    
-    
+    (https://jaeger.itscoder.com/android/2016/03/27/statusbar-util.html)
 
 
 技术点：
