@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BaseCore</string>
+    <string name="net404">网络错误，点击重新加载</string>
 </resources>
