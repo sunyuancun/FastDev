@@ -1,14 +1,6 @@
 package com.example.basecore.base.activity;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -19,6 +11,7 @@ import com.example.basecore.util.ui.StatusBarUtil;
 import com.example.basecore.util.ui.ToastUtil;
 import com.example.basecore.util.ui.UIHelper;
 import com.example.basecore.util.ui.titlebar.BGATitleBar;
+
 
 public abstract class BaseActivity extends AppCompatActivity implements BaseView {
 
