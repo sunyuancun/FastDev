@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.basecore.base.activity.BaseActivity;
+import com.example.basecore.util.ui.titlebar.BGATitleBar;
 
 
 public class CommonActivity extends BaseActivity {
@@ -17,6 +18,11 @@ public class CommonActivity extends BaseActivity {
 
     @Override
     public void initResLayout(View view) {
+
+    }
+
+    @Override
+    public void setTitleBarByActivity(BGATitleBar titleBar) {
 
     }
 }
