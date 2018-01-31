@@ -17,3 +17,21 @@ common util
    https://github.com/Justson/AgentWeb
    2.组件化路由框架
    https://github.com/alibaba/ARouter
+
+
+
+API:
+
+BaseURL: http://beautyreport.file.alimmdn.com/v4
+
+    切换图片源
+    /list_2
+    图片分类
+    /mzitu_album_list
+    最新
+   /album_data/total_page_1
+    根据分类获取图片写真集列表 分类:mmtp_qcmn_page     page: 1
+    http://beautyreport.file.alimmdn.com/v4/list_5/album_data/mmtp_qcmn_page_1
+
+    单个图片写真集 by ID
+    http://beautyreport.file.alimmdn.com/v4/mmonly/220429

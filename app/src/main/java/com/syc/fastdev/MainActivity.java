@@ -3,14 +3,10 @@ package com.syc.fastdev;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
-
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.syc.fastdev.adapter.ViewPagerFragmentAdapter;
 import com.example.basecore.util.ui.StatusBarUtil;
-
-import butterknife.ButterKnife;
 
 public class MainActivity extends FragmentActivity implements BottomNavigationBar.OnTabSelectedListener {
 
