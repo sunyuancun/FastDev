@@ -1,4 +1,4 @@
-package com.syc.fastdev.fragment;
+package com.syc.fastdev.news;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

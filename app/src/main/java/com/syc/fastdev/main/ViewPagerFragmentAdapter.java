@@ -1,10 +1,10 @@
-package com.syc.fastdev.adapter;
+package com.syc.fastdev.main;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.syc.fastdev.fragment.FragmentFactory;
+import com.syc.fastdev.main.FragmentFactory;
 
 /**
  * Created by Administrator on 2018/1/30.

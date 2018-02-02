@@ -1,4 +1,4 @@
-package com.example.basecore.util.ui;
+package com.example.basecore.util.log;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -19,6 +19,7 @@ public class LogUtil {
 
     /**
      * 得到tag（所在类.方法（L:行））
+     *
      * @return
      */
     private static String generateTag() {
@@ -99,6 +100,12 @@ public class LogUtil {
         if (showE) {
             String tag = generateTag();
             Log.e(tag, msg, tr);
+        }
+    }
+
+    public static void e(String tag, String msg) {
+        if (showE) {
+            Log.e(tag, msg);
         }
     }
 

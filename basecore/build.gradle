@@ -41,4 +41,13 @@ dependencies {
     compile 'com.github.chaychan:BottomBarLayout:1.0.9'
     compile 'com.android.support:support-v4:26.+'
     testCompile 'junit:junit:4.12'
+    /*net*/
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
+    compile 'com.squareup.retrofit2:converter-scalars:2.2.0'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.2.0'
+    compile 'io.reactivex:rxjava:1.2.7'
+    compile 'io.reactivex:rxandroid:1.2.1'
 }

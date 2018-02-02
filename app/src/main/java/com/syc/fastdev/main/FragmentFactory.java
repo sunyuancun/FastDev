@@ -1,7 +1,11 @@
-package com.syc.fastdev.fragment;
+package com.syc.fastdev.main;
 
 
 import android.support.v4.app.Fragment;
+
+import com.syc.fastdev.news.HotFragment;
+import com.syc.fastdev.pic.MeiPicFragment;
+import com.syc.fastdev.video.VideoFragment;
 
 import java.util.HashMap;
 import java.util.Map;
