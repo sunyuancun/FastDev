@@ -1,4 +1,4 @@
-package com.example.basecore.util.ui.titlebar;
+package com.example.basecore.util.ui.widgte.titlebar;
 
 import android.view.View;
 

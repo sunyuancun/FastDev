@@ -6,8 +6,4 @@ package com.example.basecore.mvp.view;
 
 public interface BaseView {
 
-    void showLoading();
-
-    void hideLoading();
-
 }

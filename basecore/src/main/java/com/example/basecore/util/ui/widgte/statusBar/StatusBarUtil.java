@@ -1,4 +1,4 @@
-package com.example.basecore.util.ui;
+package com.example.basecore.util.ui.widgte.statusBar;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

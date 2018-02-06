@@ -7,7 +7,7 @@ import android.support.v4.view.ViewPager;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.syc.fastdev.R;
-import com.example.basecore.util.ui.StatusBarUtil;
+import com.example.basecore.util.ui.widgte.statusBar.StatusBarUtil;
 
 public class MainActivity extends FragmentActivity implements BottomNavigationBar.OnTabSelectedListener {
 
@@ -27,7 +27,7 @@ public class MainActivity extends FragmentActivity implements BottomNavigationBa
     private void initViewPager() {
         mViewPager = findViewById(R.id.content_layout);
         mViewPager.setOffscreenPageLimit(10);
-        mViewPager.setAdapter(new ViewPagerFragmentAdapter(getSupportFragmentManager()));
+        mViewPager.setAdapter(new ViewPagerFragmentAdapter(getSupportFragmentManager(),ViewPagerFragmentAdapter.Type_Main));
         mViewPager.setOnPageChangeListener(pagerChangerListener);
         mViewPager.setCurrentItem(mDefaultSelectedPosition);
     }

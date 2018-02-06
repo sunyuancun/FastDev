@@ -1,17 +1,12 @@
 package com.example.basecore.net.service;
 
 
-import com.example.basecore.APPConfig;
 import com.example.basecore.mvp.modal.PicTag;
-import com.example.basecore.net.BaseResponse;
 import com.example.basecore.net.HttpManager;
 
 import java.util.List;
-import java.util.Map;
 
-import retrofit2.http.Body;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
 import rx.Observable;
 
 /**

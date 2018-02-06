@@ -7,10 +7,10 @@ import android.widget.LinearLayout;
 import com.example.basecore.R;
 import com.example.basecore.base.intface.BaseView;
 import com.example.basecore.util.ui.NetWorkUtil;
-import com.example.basecore.util.ui.StatusBarUtil;
+import com.example.basecore.util.ui.widgte.statusBar.StatusBarUtil;
 import com.example.basecore.util.ui.ToastUtil;
 import com.example.basecore.util.ui.UIHelper;
-import com.example.basecore.util.ui.titlebar.BGATitleBar;
+import com.example.basecore.util.ui.widgte.titlebar.BGATitleBar;
 
 
 public abstract class BaseActivity extends AppCompatActivity implements BaseView {

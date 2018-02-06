@@ -3,10 +3,9 @@ package com.syc.fastdev;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.basecore.base.activity.BaseActivity;
 import com.example.basecore.mvp.activity.BaseMvpActivity;
 import com.example.basecore.mvp.modal.PicTag;
-import com.example.basecore.util.ui.titlebar.BGATitleBar;
+import com.example.basecore.util.ui.widgte.titlebar.BGATitleBar;
 import com.syc.fastdev.pic.PicPresenter;
 import com.syc.fastdev.pic.PicView;
 
@@ -33,11 +32,6 @@ public class CommonActivity extends BaseMvpActivity<PicPresenter> implements Pic
 
     @Override
     public void setTitleBarByActivity(BGATitleBar titleBar) {
-
-    }
-
-    @Override
-    public void hideLoading() {
 
     }
 
