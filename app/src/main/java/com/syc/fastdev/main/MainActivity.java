@@ -3,17 +3,21 @@ package com.syc.fastdev.main;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.view.KeyEvent;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+import com.example.basecore.util.ui.ToastUtil;
+import com.example.basecore.util.ui.widgte.viewpager.NoScrollViewPager;
 import com.syc.fastdev.R;
 import com.example.basecore.util.ui.widgte.statusBar.StatusBarUtil;
 
 public class MainActivity extends FragmentActivity implements BottomNavigationBar.OnTabSelectedListener {
 
     BottomNavigationBar bottomNavigationBar;
-    ViewPager mViewPager;
+    NoScrollViewPager mViewPager;
     int mDefaultSelectedPosition = 0;
+    private  long lastTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +31,7 @@ public class MainActivity extends FragmentActivity implements BottomNavigationBa
     private void initViewPager() {
         mViewPager = findViewById(R.id.content_layout);
         mViewPager.setOffscreenPageLimit(10);
-        mViewPager.setAdapter(new ViewPagerFragmentAdapter(getSupportFragmentManager(),ViewPagerFragmentAdapter.Type_Main));
+        mViewPager.setAdapter(new ViewPagerFragmentAdapter(getSupportFragmentManager(), ViewPagerFragmentAdapter.Type_Main));
         mViewPager.setOnPageChangeListener(pagerChangerListener);
         mViewPager.setCurrentItem(mDefaultSelectedPosition);
     }
@@ -83,4 +87,17 @@ public class MainActivity extends FragmentActivity implements BottomNavigationBa
 
         }
     };
+
+
+    @Override
+    public void onBackPressed() {
+        long currenttime =System.currentTimeMillis();
+        if (currenttime -lastTime<2*1000){
+            finish();
+            System.exit(0);
+        }else{
+            ToastUtil.showShort(this,"请再按一次");
+            lastTime=currenttime;
+        }
+    }
 }

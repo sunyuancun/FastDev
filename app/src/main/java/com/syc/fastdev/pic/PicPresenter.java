@@ -10,6 +10,8 @@ import com.example.basecore.util.ui.ToastUtil;
 import java.util.List;
 
 import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by Administrator on 2018/2/2.
@@ -23,23 +25,26 @@ public class PicPresenter extends BasePresenter<PicView> {
 
 
     public void getPicTagList() {
-        PicService.getActiveList().subscribe(new Subscriber<List<PicTag>>() {
-            @Override
-            public void onCompleted() {
+        PicService.getActiveList()
+                .subscribeOn(Schedulers.io()) // 指定 subscribe() 发生在 IO 线程
+                .observeOn(AndroidSchedulers.mainThread()) // 指定 Subscriber 的回调发生在主线程
+                .subscribe(new Subscriber<List<PicTag>>() {
+                    @Override
+                    public void onCompleted() {
 
-            }
+                    }
 
-            @Override
-            public void onError(Throwable e) {
-                LogUtil.e(e.getMessage());
-            }
+                    @Override
+                    public void onError(Throwable e) {
+                        LogUtil.e(e.getLocalizedMessage());
+                    }
 
-            @Override
-            public void onNext(List<PicTag> list) {
-                LogUtil.e(list.size() + "");
-                getMvpView().getPicTagList(list);
-            }
-        });
+                    @Override
+                    public void onNext(List<PicTag> list) {
+                        LogUtil.e(list.size() + "");
+                        getMvpView().getPicTagList(list);
+                    }
+                });
     }
 
 

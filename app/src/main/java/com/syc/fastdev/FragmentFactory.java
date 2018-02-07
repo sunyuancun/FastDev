@@ -18,8 +18,8 @@ import java.util.Map;
  */
 
 public class FragmentFactory {
-
-    private static Map<String, Fragment> mFragments = new HashMap();
+    private static FragmentFactory mFragmentFactory;
+    private Map<String, Fragment> mFragments = new HashMap();
     public static final int INDEX_HOT = 0;
     public static final int INDEX_MEINV = 1;
     public static final int INDEX_VIDEO = 2;
@@ -30,7 +30,15 @@ public class FragmentFactory {
     public static final int MeiTu_Type_Size = 2;
 
 
-    public static Fragment createFragment(int position, String type) {
+    public static FragmentFactory getInstance() {
+        if (mFragmentFactory == null) {
+            mFragmentFactory = new FragmentFactory();
+        }
+        return mFragmentFactory;
+    }
+
+
+    public Fragment createFragment(int position, String type) {
         Fragment fragment;
         fragment = mFragments.get(type + position);
 

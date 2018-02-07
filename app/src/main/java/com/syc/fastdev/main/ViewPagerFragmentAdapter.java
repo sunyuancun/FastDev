@@ -13,7 +13,7 @@ import com.syc.fastdev.FragmentFactory;
 public class ViewPagerFragmentAdapter extends FragmentPagerAdapter {
 
     public static final String Type_Main = "main";
-    public static final String Type_MeiTu = "meitu";
+    public static final String Type_MeiTu = "pic";
 
     private String type;
 
@@ -28,29 +28,28 @@ public class ViewPagerFragmentAdapter extends FragmentPagerAdapter {
         if (type.equals(Type_Main)) {
 
             if (position == FragmentFactory.INDEX_HOT) {
-                return FragmentFactory.createFragment(FragmentFactory.INDEX_HOT,type);
+                return FragmentFactory.getInstance().createFragment(FragmentFactory.INDEX_HOT, type);
             }
 
             if (position == FragmentFactory.INDEX_MEINV) {
-                return FragmentFactory.createFragment(FragmentFactory.INDEX_MEINV,type);
+                return FragmentFactory.getInstance().createFragment(FragmentFactory.INDEX_MEINV, type);
             }
 
             if (position == FragmentFactory.INDEX_VIDEO) {
-                return FragmentFactory.createFragment(FragmentFactory.INDEX_VIDEO,type);
+                return FragmentFactory.getInstance().createFragment(FragmentFactory.INDEX_VIDEO, type);
             }
         }
 
 
         if (type.equals(Type_MeiTu)) {
             if (position == FragmentFactory.INDEX_HOT_TU) {
-                return FragmentFactory.createFragment(FragmentFactory.INDEX_HOT_TU,type);
+                return FragmentFactory.getInstance().createFragment(FragmentFactory.INDEX_HOT_TU, type);
             }
 
             if (position == FragmentFactory.INDEX_CLASSIFY) {
-                return FragmentFactory.createFragment(FragmentFactory.INDEX_CLASSIFY,type);
+                return FragmentFactory.getInstance().createFragment(FragmentFactory.INDEX_CLASSIFY, type);
             }
         }
-
 
         return null;
     }
@@ -59,6 +58,6 @@ public class ViewPagerFragmentAdapter extends FragmentPagerAdapter {
     public int getCount() {
         if (type.equals(Type_Main)) return FragmentFactory.Main_Type_Size;
         if (type.equals(Type_MeiTu)) return FragmentFactory.MeiTu_Type_Size;
-        return -1;
+        return 0;
     }
 }

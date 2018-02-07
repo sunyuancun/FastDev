@@ -11,5 +11,7 @@
 
     <color name="T8">#49bdcc</color>
 
+    <color name="tagDark">#FF4081</color>
+    <color name="tagLight">#61406e</color>
 
 </resources>

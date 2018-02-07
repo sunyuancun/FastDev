@@ -34,6 +34,9 @@ dependencies {
     //UI
     //底部导航
     compile 'com.ashokvarma.android:bottom-navigation-bar:2.0.4'
+    //tag布局
+    compile 'com.moxun:tagcloudlib:1.2.0'
+
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:design:26.+'
