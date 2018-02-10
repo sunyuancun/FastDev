@@ -1,5 +1,6 @@
 package com.syc.fastdev.pic;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.basecore.mvp.modal.PicTag;
+import com.example.basecore.util.ui.UIHelper;
 import com.moxun.tagcloudlib.view.TagsAdapter;
 
 import java.util.ArrayList;
@@ -24,8 +26,10 @@ import java.util.List;
 public class TextTagsAdapter extends TagsAdapter {
 
     private List<PicTag> dataSet = new ArrayList<>();
+    private Activity activity;
 
-    public TextTagsAdapter(List<PicTag> picTags) {
+    public TextTagsAdapter(Activity activity, List<PicTag> picTags) {
+        this.activity = activity;
         dataSet.clear();
         dataSet = picTags;
     }
@@ -43,8 +47,7 @@ public class TextTagsAdapter extends TagsAdapter {
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("Click", "Tag " + position + " clicked.");
-                Toast.makeText(context, "Tag " + position + " clicked", Toast.LENGTH_SHORT).show();
+//                UIHelper.startActivityWithParams(activity,);
             }
         });
         tv.setTextColor(Color.WHITE);

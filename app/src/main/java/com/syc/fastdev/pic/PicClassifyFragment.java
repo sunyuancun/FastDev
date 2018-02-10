@@ -38,7 +38,7 @@ public class PicClassifyFragment extends BaseMvpFragment<PicPresenter> implement
 
     @Override
     protected void initFragmentData() {
-        mTextTagsAdapter = new TextTagsAdapter(mTagList);
+        mTextTagsAdapter = new TextTagsAdapter(getActivity(),    mTagList);
         tagCloudView.setAdapter(mTextTagsAdapter);
         getPresenter().getPicTagList();
     }

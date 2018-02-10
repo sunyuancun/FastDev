@@ -88,7 +88,6 @@ public class MainActivity extends FragmentActivity implements BottomNavigationBa
         }
     };
 
-
     @Override
     public void onBackPressed() {
         long currenttime =System.currentTimeMillis();
