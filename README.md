@@ -20,6 +20,12 @@ common util
 
 
 
+逻辑处理：
+
+    loading加载
+    http://www.androidchina.net/2884.html
+
+
 API:
 
 BaseURL: http://beautyreport.file.alimmdn.com/v4
@@ -35,3 +41,8 @@ BaseURL: http://beautyreport.file.alimmdn.com/v4
 
     单个图片写真集 by ID
     http://beautyreport.file.alimmdn.com/v4/mmonly/220429
+
+
+广告SDK：
+
+    google http://www.google.cn/admob/platform.html
