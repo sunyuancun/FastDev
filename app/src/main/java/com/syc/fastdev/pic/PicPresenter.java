@@ -23,6 +23,7 @@ public class PicPresenter extends BasePresenter<PicView> {
         super(mvpView);
     }
 
+    private String PIC_LIST_BASE_URL = "http://beautyreport.file.alimmdn.com/v4/list_5/";
     private String PIC_TAG_URL = "http://beautyreport.file.alimmdn.com/v4/list_5/mzitu_album_list";
 
     public void getPicTagList() {

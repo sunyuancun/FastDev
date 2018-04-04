@@ -15,6 +15,8 @@ import java.util.List;
 
 public class PicListByCategoryActivity extends BaseMvpActivity<PicPresenter> implements PicView {
 
+    PicTag picTag;
+
     @Override
     public PicPresenter createPresenter() {
         return new PicPresenter(this);
@@ -24,8 +26,8 @@ public class PicListByCategoryActivity extends BaseMvpActivity<PicPresenter> imp
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pic_list_category);
-        PicTag picTag = (PicTag) getIntent().getSerializableExtra("PicTag");
-        LogUtil.e(picTag.tag_page_num+"");
+        picTag = (PicTag) getIntent().getSerializableExtra("PicTag");
+
     }
 
     @Override
