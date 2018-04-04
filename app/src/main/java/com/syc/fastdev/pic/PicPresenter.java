@@ -23,9 +23,10 @@ public class PicPresenter extends BasePresenter<PicView> {
         super(mvpView);
     }
 
+    private String PIC_TAG_URL = "http://beautyreport.file.alimmdn.com/v4/list_5/mzitu_album_list";
 
     public void getPicTagList() {
-        PicService.getActiveList()
+        PicService.getActiveList(PIC_TAG_URL)
                 .subscribeOn(Schedulers.io()) // 指定 subscribe() 发生在 IO 线程
                 .observeOn(AndroidSchedulers.mainThread()) // 指定 Subscriber 的回调发生在主线程
                 .subscribe(new Subscriber<List<PicTag>>() {

@@ -44,12 +44,6 @@ public class TextTagsAdapter extends TagsAdapter {
         TextView tv = new TextView(context);
         tv.setGravity(Gravity.CENTER);
         tv.setText(dataSet.get(position).tag_name);
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                UIHelper.startActivityWithParams(activity,);
-            }
-        });
         tv.setTextColor(Color.WHITE);
         return tv;
     }

@@ -7,6 +7,7 @@ import com.example.basecore.net.HttpManager;
 import java.util.List;
 
 import retrofit2.http.GET;
+import retrofit2.http.Url;
 import rx.Observable;
 
 /**
@@ -16,12 +17,12 @@ import rx.Observable;
 public class PicService extends BaseService {
 
     private interface Api {
-        @GET("/v4/list_5/mzitu_album_list")
-        Observable<List<PicTag>> getActiveList();
+        @GET
+        Observable<List<PicTag>> getActiveList(@Url String url);
     }
 
-    public static Observable<List<PicTag>> getActiveList() {
-        return toSubscribe(HttpManager.getInstance().getService(Api.class).getActiveList());
+    public static Observable<List<PicTag>> getActiveList(String url) {
+        return toSubscribe(HttpManager.getInstance().getService(Api.class).getActiveList(url));
     }
 
 }

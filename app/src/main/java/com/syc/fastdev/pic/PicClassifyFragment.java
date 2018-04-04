@@ -13,6 +13,7 @@ import com.example.basecore.mvp.fragment.BaseMvpFragment;
 import com.example.basecore.mvp.modal.PicTag;
 import com.moxun.tagcloudlib.view.TagCloudView;
 import com.syc.fastdev.R;
+import com.syc.fastdev.helper.AppHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,8 +39,15 @@ public class PicClassifyFragment extends BaseMvpFragment<PicPresenter> implement
 
     @Override
     protected void initFragmentData() {
-        mTextTagsAdapter = new TextTagsAdapter(getActivity(),    mTagList);
+        mTextTagsAdapter = new TextTagsAdapter(getActivity(), mTagList);
         tagCloudView.setAdapter(mTextTagsAdapter);
+        tagCloudView.setOnTagClickListener(new TagCloudView.OnTagClickListener() {
+            @Override
+            public void onItemClick(ViewGroup parent, View view, int position) {
+                PicTag picTag = mTagList.get(position);
+                AppHelper.startPicListByCategoryActivity(getActivity(), PicListByCategoryActivity.class, picTag);
+            }
+        });
         getPresenter().getPicTagList();
     }
 
