@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.example.basecore.mvp.fragment.BaseMvpFragment;
 import com.example.basecore.mvp.modal.PicTag;
+import com.example.basecore.mvp.modal.Portrait;
 import com.moxun.tagcloudlib.view.TagCloudView;
 import com.syc.fastdev.R;
 import com.syc.fastdev.helper.AppHelper;
@@ -56,6 +57,11 @@ public class PicClassifyFragment extends BaseMvpFragment<PicPresenter> implement
         mTagList.clear();
         mTagList.addAll(list);
         mTextTagsAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void getPortraitList(List<Portrait> list) {
+
     }
 
     @Override

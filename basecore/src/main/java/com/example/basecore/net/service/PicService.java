@@ -2,6 +2,7 @@ package com.example.basecore.net.service;
 
 
 import com.example.basecore.mvp.modal.PicTag;
+import com.example.basecore.mvp.modal.Portrait;
 import com.example.basecore.net.HttpManager;
 
 import java.util.List;
@@ -16,13 +17,21 @@ import rx.Observable;
 
 public class PicService extends BaseService {
 
+
     private interface Api {
         @GET
         Observable<List<PicTag>> getActiveList(@Url String url);
+
+        @GET
+        Observable<List<Portrait>> getPortraitListByTag(@Url String rightUrl);
     }
 
     public static Observable<List<PicTag>> getActiveList(String url) {
         return toSubscribe(HttpManager.getInstance().getService(Api.class).getActiveList(url));
+    }
+
+    public static Observable<List<Portrait>> getPortraitListByTag(String rightUrl) {
+        return toSubscribe(HttpManager.getInstance().getService(Api.class).getPortraitListByTag(rightUrl));
     }
 
 }

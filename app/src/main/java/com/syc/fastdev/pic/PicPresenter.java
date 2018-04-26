@@ -1,6 +1,7 @@
 package com.syc.fastdev.pic;
 
 import com.example.basecore.mvp.modal.PicTag;
+import com.example.basecore.mvp.modal.Portrait;
 import com.example.basecore.mvp.presenter.BasePresenter;
 import com.example.basecore.net.exception.ApiException;
 import com.example.basecore.net.service.PicService;
@@ -50,4 +51,27 @@ public class PicPresenter extends BasePresenter<PicView> {
     }
 
 
+    public void getPortraitListByTag(String url) {
+        String rightUrl = PIC_LIST_BASE_URL + url;
+        PicService.getPortraitListByTag(rightUrl)
+                .subscribeOn(Schedulers.io()) // 指定 subscribe() 发生在 IO 线程
+                .observeOn(AndroidSchedulers.mainThread()) // 指定 Subscriber 的回调发生在主线程
+                .subscribe(new Subscriber<List<Portrait>>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        LogUtil.e(e.getLocalizedMessage());
+                    }
+
+                    @Override
+                    public void onNext(List<Portrait> list) {
+                        LogUtil.e(list.size() + "");
+                        getMvpView().getPortraitList(list);
+                    }
+                });
+    }
 }

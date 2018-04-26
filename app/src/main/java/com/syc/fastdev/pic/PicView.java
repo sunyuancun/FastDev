@@ -1,6 +1,7 @@
 package com.syc.fastdev.pic;
 
 import com.example.basecore.mvp.modal.PicTag;
+import com.example.basecore.mvp.modal.Portrait;
 import com.example.basecore.mvp.view.BaseView;
 
 import java.util.List;
@@ -12,5 +13,6 @@ import java.util.List;
 public interface PicView extends BaseView {
 
     void getPicTagList(List<PicTag> list);
+    void getPortraitList(List<Portrait> list);
 
 }
