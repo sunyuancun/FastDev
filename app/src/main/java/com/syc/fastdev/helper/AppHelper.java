@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.example.basecore.mvp.modal.PicTag;
+import com.example.basecore.mvp.modal.Portrait;
+import com.syc.fastdev.pic.PicGalleryActivity;
 
 /**
  * Created by Administrator on 2018/4/4.
@@ -17,4 +19,10 @@ public class AppHelper {
         context.startActivity(intent);
     }
 
+    public static void showPicGallery(Context context, Portrait portrait) {
+        Intent intent = new Intent(context, PicGalleryActivity.class);
+        intent.putExtra("Portrait", portrait);
+        context.startActivity(intent);
+
+    }
 }

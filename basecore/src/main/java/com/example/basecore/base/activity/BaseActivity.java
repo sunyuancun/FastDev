@@ -20,7 +20,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     @Override
     public void setContentView(int layoutResID) {
         //状态栏
-        StatusBarUtil.setColor(this, this.getResources().getColor(R.color.colorPrimary));
+        StatusBarUtil.setColor(this, this.getResources().getColor(R.color.colorAccent));
         super.setContentView(R.layout.activity_base);
         mLayoutResID = layoutResID;
         if (checkNetWork()) {
@@ -28,13 +28,15 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
         }
     }
 
+    BGATitleBar titleBar;
+
     private void setContentUI(int layoutResID) {
         //activity布局
         View view = getLayoutInflater().inflate(layoutResID, null);
         LinearLayout.LayoutParams view_params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
         view.setLayoutParams(view_params);
         //titleBar布局
-        BGATitleBar titleBar = new BGATitleBar(this);
+        titleBar = new BGATitleBar(this);
         LinearLayout.LayoutParams title_params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, UIHelper.dp2px(this, 44));
         titleBar.setLayoutParams(title_params);
         setCommonTitle(titleBar);
@@ -60,10 +62,14 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     private void setCommonTitle(BGATitleBar titleBar) {
         titleBar.setTitleText(getTitle());
         titleBar.setTitleTextColor(this.getResources().getColor(R.color.white));
-        titleBar.setBackgroundColor(this.getResources().getColor(R.color.colorPrimary));
+        titleBar.setBackgroundColor(this.getResources().getColor(R.color.colorAccent));
         titleBar.setLeftDrawable(this.getResources().getDrawable(R.drawable.icon_back));
         titleBar.setDelegate(delegate);
-        setTitleBarByActivity(titleBar);
+    }
+
+
+    public  void setTitleBarText(String titleBarText){
+        titleBar.setTitleText(titleBarText);
     }
 
 
@@ -79,8 +85,6 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     }
 
     public abstract void initResLayout(View view);
-
-    public abstract void setTitleBarByActivity(BGATitleBar titleBar);
 
     @Override
     public void showLoading() {

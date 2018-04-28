@@ -2,10 +2,12 @@ package com.syc.fastdev.pic;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.basecore.mvp.modal.Portrait;
+import com.example.basecore.util.ui.ImageUtils;
 import com.syc.fastdev.R;
 
 import net.wujingchao.android.view.SimpleTagImageView;
@@ -28,6 +30,7 @@ public class PortraitAdapter extends BaseQuickAdapter<Portrait, BaseViewHolder> 
     @Override
     protected void convert(BaseViewHolder helper, Portrait item) {
         SimpleTagImageView simpleTagImageView = helper.getView(R.id.image_icon);
-        simpleTagImageView.setTagText(item.album_name);
+        simpleTagImageView.setTagText(item.album_pics);
+        ImageUtils.showPic(context, item.album_thumb, simpleTagImageView);
     }
 }

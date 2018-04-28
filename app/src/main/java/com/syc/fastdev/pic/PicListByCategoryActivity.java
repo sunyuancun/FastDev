@@ -1,5 +1,6 @@
 package com.syc.fastdev.pic;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,12 +8,14 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.basecore.mvp.activity.BaseMvpActivity;
 import com.example.basecore.mvp.modal.PicTag;
 import com.example.basecore.mvp.modal.Portrait;
 import com.example.basecore.util.log.LogUtil;
 import com.example.basecore.util.ui.widgte.titlebar.BGATitleBar;
 import com.syc.fastdev.R;
+import com.syc.fastdev.helper.AppHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +39,7 @@ public class PicListByCategoryActivity extends BaseMvpActivity<PicPresenter> imp
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pic_list_category);
         picTag = (PicTag) getIntent().getSerializableExtra("PicTag");
+        setTitleBarText(picTag.tag_name);
         initView();
     }
 
@@ -43,9 +47,16 @@ public class PicListByCategoryActivity extends BaseMvpActivity<PicPresenter> imp
         requstDataByPage(page);
         mRecyclerView = findViewById(R.id.list);
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         mPortraitAdapter = new PortraitAdapter(this, R.layout.item_of_portrait, mPortraitList);
         mRecyclerView.setAdapter(mPortraitAdapter);
+        ((PortraitAdapter) mRecyclerView.getAdapter()).setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Portrait portrait = (Portrait) adapter.getItem(position);
+                AppHelper.showPicGallery(PicListByCategoryActivity.this, portrait);
+            }
+        });
     }
 
     private void requstDataByPage(int page) {
@@ -57,10 +68,6 @@ public class PicListByCategoryActivity extends BaseMvpActivity<PicPresenter> imp
 
     }
 
-    @Override
-    public void setTitleBarByActivity(BGATitleBar titleBar) {
-
-    }
 
     @Override
     public void getPicTagList(List<PicTag> list) {

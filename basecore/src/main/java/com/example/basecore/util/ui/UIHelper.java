@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.util.TypedValue;
 
 import com.example.basecore.R;
+import com.example.basecore.mvp.modal.Portrait;
 
 /**
  * Created by yuancunsun on 2018/1/12.
