@@ -61,22 +61,4 @@ public class UIHelper {
         return (pxVal / context.getResources().getDisplayMetrics().scaledDensity);
     }
 
-
-    public static void startActivity(Activity activity, Class clazz, boolean isFinish) {
-        activity.startActivity(new Intent(activity, clazz));
-        if (isFinish) {
-            activity.finish();
-        }
-        activity.overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
-    }
-
-    public static void startActivityWithParams(Activity activity, Class clazz, Object object, boolean isFinish) {
-        activity.startActivity(new Intent(activity, clazz));
-        if (isFinish) {
-            activity.finish();
-        }
-        activity.overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
-    }
-
-
 }

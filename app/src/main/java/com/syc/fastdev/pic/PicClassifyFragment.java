@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.basecore.mvp.fragment.BaseMvpFragment;
+import com.example.basecore.mvp.modal.Article;
 import com.example.basecore.mvp.modal.PicTag;
 import com.example.basecore.mvp.modal.Portrait;
 import com.moxun.tagcloudlib.view.TagCloudView;
@@ -61,6 +62,11 @@ public class PicClassifyFragment extends BaseMvpFragment<PicPresenter> implement
 
     @Override
     public void getPortraitList(List<Portrait> list) {
+
+    }
+
+    @Override
+    public void getArticle(Article article) {
 
     }
 

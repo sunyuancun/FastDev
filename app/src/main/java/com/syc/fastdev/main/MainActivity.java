@@ -16,15 +16,15 @@ public class MainActivity extends FragmentActivity implements BottomNavigationBa
 
     BottomNavigationBar bottomNavigationBar;
     NoScrollViewPager mViewPager;
-    int mDefaultSelectedPosition = 0;
-    private  long lastTime;
+    int mDefaultSelectedPosition = 1;
+    private long lastTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         StatusBarUtil.setTranslucent(this);
         setContentView(R.layout.activity_main);
-        initBottomNavigationBar();
+//        initBottomNavigationBar();
         initViewPager();
     }
 
@@ -36,20 +36,20 @@ public class MainActivity extends FragmentActivity implements BottomNavigationBa
         mViewPager.setCurrentItem(mDefaultSelectedPosition);
     }
 
-    private void initBottomNavigationBar() {
-        bottomNavigationBar = findViewById(R.id.bottom_navigation_bar);
-        bottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED);
-        bottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
-        bottomNavigationBar.setBarBackgroundColor(R.color.black);
-        bottomNavigationBar.setActiveColor(R.color.colorAccent);
-        bottomNavigationBar.setInActiveColor(R.color.white);
-        bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.tab_hot, "热点"))
-                .addItem(new BottomNavigationItem(R.mipmap.tab_pic, "美图"))
-                .addItem(new BottomNavigationItem(R.mipmap.tab_video, "视频"))
-                .setFirstSelectedPosition(mDefaultSelectedPosition)
-                .initialise();
-        bottomNavigationBar.setTabSelectedListener(this);
-    }
+//    private void initBottomNavigationBar() {
+//        bottomNavigationBar = findViewById(R.id.bottom_navigation_bar);
+//        bottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED);
+//        bottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
+//        bottomNavigationBar.setBarBackgroundColor(R.color.black);
+//        bottomNavigationBar.setActiveColor(R.color.colorAccent);
+//        bottomNavigationBar.setInActiveColor(R.color.white);
+//        bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.tab_hot, "热点"))
+//                .addItem(new BottomNavigationItem(R.mipmap.tab_pic, "美图"))
+//                .addItem(new BottomNavigationItem(R.mipmap.tab_video, "视频"))
+//                .setFirstSelectedPosition(mDefaultSelectedPosition)
+//                .initialise();
+//        bottomNavigationBar.setTabSelectedListener(this);
+//    }
 
 
     @Override
@@ -90,13 +90,13 @@ public class MainActivity extends FragmentActivity implements BottomNavigationBa
 
     @Override
     public void onBackPressed() {
-        long currenttime =System.currentTimeMillis();
-        if (currenttime -lastTime<2*1000){
+        long currenttime = System.currentTimeMillis();
+        if (currenttime - lastTime < 2 * 1000) {
             finish();
             System.exit(0);
-        }else{
-            ToastUtil.showShort(this,"请再按一次");
-            lastTime=currenttime;
+        } else {
+            ToastUtil.showShort(this, "请再按一次");
+            lastTime = currenttime;
         }
     }
 }

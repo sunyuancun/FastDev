@@ -1,5 +1,6 @@
 package com.syc.fastdev.pic;
 
+import com.example.basecore.mvp.modal.Article;
 import com.example.basecore.mvp.modal.PicTag;
 import com.example.basecore.mvp.modal.Portrait;
 import com.example.basecore.mvp.presenter.BasePresenter;
@@ -24,6 +25,7 @@ public class PicPresenter extends BasePresenter<PicView> {
         super(mvpView);
     }
 
+    private String ARTICLE_BASE_URL = "http://beautyreport.file.alimmdn.com/v4/";
     private String PIC_LIST_BASE_URL = "http://beautyreport.file.alimmdn.com/v4/list_5/";
     private String PIC_TAG_URL = "http://beautyreport.file.alimmdn.com/v4/list_5/mzitu_album_list";
 
@@ -71,6 +73,28 @@ public class PicPresenter extends BasePresenter<PicView> {
                     public void onNext(List<Portrait> list) {
                         LogUtil.e(list.size() + "");
                         getMvpView().getPortraitList(list);
+                    }
+                });
+    }
+
+    public void getArticle(String album_address) {
+        String rightUrl = ARTICLE_BASE_URL + album_address;
+        PicService.getArticle(rightUrl)
+                .subscribeOn(Schedulers.io()) // 指定 subscribe() 发生在 IO 线程
+                .observeOn(AndroidSchedulers.mainThread()) // 指定 Subscriber 的回调发生在主线程
+                .subscribe(new Subscriber<Article>() {
+                    @Override
+                    public void onCompleted() {
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        LogUtil.e(e.getLocalizedMessage());
+                    }
+
+                    @Override
+                    public void onNext(Article article) {
+                        getMvpView().getArticle(article);
                     }
                 });
     }

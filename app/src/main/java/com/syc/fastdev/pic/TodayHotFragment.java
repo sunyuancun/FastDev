@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.basecore.mvp.fragment.BaseMvpFragment;
+import com.example.basecore.mvp.modal.Article;
 import com.example.basecore.mvp.modal.PicTag;
 import com.example.basecore.mvp.modal.Portrait;
 import com.syc.fastdev.R;
@@ -44,6 +45,11 @@ public class TodayHotFragment extends BaseMvpFragment<PicPresenter> implements P
 
     @Override
     public void getPortraitList(List<Portrait> list) {
+
+    }
+
+    @Override
+    public void getArticle(Article article) {
 
     }
 

@@ -10,6 +10,7 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.basecore.mvp.activity.BaseMvpActivity;
+import com.example.basecore.mvp.modal.Article;
 import com.example.basecore.mvp.modal.PicTag;
 import com.example.basecore.mvp.modal.Portrait;
 import com.example.basecore.util.log.LogUtil;
@@ -78,5 +79,10 @@ public class PicListByCategoryActivity extends BaseMvpActivity<PicPresenter> imp
     public void getPortraitList(List<Portrait> list) {
         mPortraitList.addAll(list);
         mRecyclerView.getAdapter().notifyDataSetChanged();
+    }
+
+    @Override
+    public void getArticle(Article article) {
+
     }
 }
