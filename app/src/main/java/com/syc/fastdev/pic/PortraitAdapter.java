@@ -30,6 +30,7 @@ public class PortraitAdapter extends BaseQuickAdapter<Portrait, BaseViewHolder> 
     @Override
     protected void convert(BaseViewHolder helper, Portrait item) {
         SimpleTagImageView simpleTagImageView = helper.getView(R.id.image_icon);
+//        simpleTagImageView.setMinimumHeight(400);
         simpleTagImageView.setTagText(item.album_pics);
         ImageUtils.showPic(context, item.album_thumb, simpleTagImageView);
     }

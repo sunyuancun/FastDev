@@ -5,17 +5,19 @@
 
     <net.wujingchao.android.view.SimpleTagImageView xmlns:simple="http://schemas.android.com/apk/res-auto"
         android:id="@+id/image_icon"
-        android:layout_width="200dp"
-        android:layout_height="300dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
         simple:simple_corner_distance="30dp"
         simple:simple_tag_background_color="#99FF4081"
         simple:simple_tag_enable="true"
         simple:simple_tag_orientation="right_top"
-        simple:simple_tag_round_radius="10dp"
+        simple:simple_tag_round_radius="5dp"
         simple:simple_tag_text="AB"
         simple:simple_tag_textColor="@android:color/white"
         simple:simple_tag_textSize="18sp"
-        simple:simple_tag_width="20dip" />
+        simple:simple_tag_width="20dp" />
 
 
 </RelativeLayout>

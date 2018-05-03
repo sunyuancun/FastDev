@@ -68,7 +68,14 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     }
 
 
-    public  void setTitleBarText(String titleBarText){
+    public void setTitleBarVisiable(Boolean visiable) {
+        if (visiable)
+            titleBar.setVisibility(View.VISIBLE);
+        else
+            titleBar.setVisibility(View.GONE);
+    }
+
+    public void setTitleBarText(String titleBarText) {
         titleBar.setTitleText(titleBarText);
     }
 

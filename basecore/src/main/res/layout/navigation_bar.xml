@@ -14,8 +14,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="推荐"
+            android:gravity="center_horizontal|bottom"
+            android:paddingBottom="10dp"
+            android:text="热图"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
@@ -24,7 +25,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="center_horizontal|bottom"
+            android:paddingBottom="10dp"
             android:text="分类"
             android:textColor="@color/white"
             android:textSize="16sp" />

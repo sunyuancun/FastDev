@@ -38,6 +38,7 @@ public class PicGalleryActivity extends BaseMvpActivity<PicPresenter> implements
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_pic_gallery);
+        this.setTitleBarVisiable(false);
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
@@ -48,7 +49,6 @@ public class PicGalleryActivity extends BaseMvpActivity<PicPresenter> implements
 
     private void initView() {
         viewPager = findViewById(R.id.view_pager);
-//        viewPager.setPageMargin(200);
         viewPager.setOffscreenPageLimit(10);
         viewPager.setAdapter(new ImageViewPagerAdapter(PicGalleryActivity.this, picInfos));
     }
@@ -89,16 +89,6 @@ public class PicGalleryActivity extends BaseMvpActivity<PicPresenter> implements
             this.imageList = imageList;
         }
 
-//        private void initImageViews() {
-//            for (int i = 0; i < 4; i++) {
-//
-//                ImageView imageView = (ImageView) viewItem.findViewById(R.id.picker_gallery_image_view);
-//                imageView.setImageResource(R.mipmap.ic_launcher);
-//                imageView.setScaleType(ImageView.ScaleType.MATRIX);
-//                views.add(viewItem);
-//            }
-//        }
-
         @Override
         public int getCount() {
             return this.imageList.size();
@@ -116,9 +106,9 @@ public class PicGalleryActivity extends BaseMvpActivity<PicPresenter> implements
 
             Article.PicInfo picInfo = imageList.get(position);
             ImageTouchView imageView = itemView.findViewById(R.id.picker_gallery_image_view);
+            imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
             imageView.enable();
-            Glide.with(context).load(picInfo.pic_url).dontAnimate().crossFade(0).into(imageView);
-
+            Glide.with(context).load(picInfo.pic_url).placeholder(R.drawable.icon_nopic).dontAnimate().crossFade(0).into(imageView);
             container.addView(itemView);
             return itemView;
         }
