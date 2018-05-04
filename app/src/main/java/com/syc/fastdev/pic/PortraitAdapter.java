@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.basecore.mvp.modal.Portrait;
@@ -28,10 +29,17 @@ public class PortraitAdapter extends BaseQuickAdapter<Portrait, BaseViewHolder> 
     }
 
     @Override
-    protected void convert(BaseViewHolder helper, Portrait item) {
-        SimpleTagImageView simpleTagImageView = helper.getView(R.id.image_icon);
+    protected void convert(BaseViewHolder holder, Portrait item) {
+
+        SimpleTagImageView simpleTagImageView = holder.getView(R.id.image_icon);
 //        simpleTagImageView.setMinimumHeight(400);
         simpleTagImageView.setTagText(item.album_pics);
         ImageUtils.showPic(context, item.album_thumb, simpleTagImageView);
+    }
+
+
+    @Override
+    public void onViewRecycled(BaseViewHolder holder) {
+        super.onViewRecycled(holder);
     }
 }

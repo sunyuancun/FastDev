@@ -25,8 +25,8 @@ public class PicPresenter extends BasePresenter<PicView> {
         super(mvpView);
     }
 
-    private String ARTICLE_BASE_URL = "http://beautyreport.file.alimmdn.com/v4/";
-    private String PIC_LIST_BASE_URL = "http://beautyreport.file.alimmdn.com/v4/list_5/";
+    private String ONE_ARTICLE_URL = "http://beautyreport.file.alimmdn.com/v4/";
+    private String PIC_PORTRAIT_LIST_URL = "http://beautyreport.file.alimmdn.com/v4/list_5/";
     private String PIC_TAG_URL = "http://beautyreport.file.alimmdn.com/v4/list_5/mzitu_album_list";
 
     public void getPicTagList() {
@@ -54,7 +54,7 @@ public class PicPresenter extends BasePresenter<PicView> {
 
 
     public void getPortraitListByTag(String url) {
-        String rightUrl = PIC_LIST_BASE_URL + url;
+        String rightUrl = PIC_PORTRAIT_LIST_URL + url;
         PicService.getPortraitListByTag(rightUrl)
                 .subscribeOn(Schedulers.io()) // 指定 subscribe() 发生在 IO 线程
                 .observeOn(AndroidSchedulers.mainThread()) // 指定 Subscriber 的回调发生在主线程
@@ -78,7 +78,7 @@ public class PicPresenter extends BasePresenter<PicView> {
     }
 
     public void getArticle(String album_address) {
-        String rightUrl = ARTICLE_BASE_URL + album_address;
+        String rightUrl = ONE_ARTICLE_URL + album_address;
         PicService.getArticle(rightUrl)
                 .subscribeOn(Schedulers.io()) // 指定 subscribe() 发生在 IO 线程
                 .observeOn(AndroidSchedulers.mainThread()) // 指定 Subscriber 的回调发生在主线程

@@ -38,7 +38,7 @@ public class TodayHotFragment extends BaseMvpFragment<PicPresenter> implements P
     @Override
     protected void initFragmentData() {
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
         mPortraitAdapter = new PortraitAdapter(getActivity(), R.layout.item_of_portrait, mPortraitList);
         mRecyclerView.setAdapter(mPortraitAdapter);
         ((PortraitAdapter) mRecyclerView.getAdapter()).setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
