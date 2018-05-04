@@ -51,13 +51,31 @@ public class PicListByCategoryActivity extends BaseMvpActivity<PicPresenter> imp
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         mPortraitAdapter = new PortraitAdapter(this, R.layout.item_of_portrait, mPortraitList);
         mRecyclerView.setAdapter(mPortraitAdapter);
-        ((PortraitAdapter) mRecyclerView.getAdapter()).setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        setRecyclerviewFunction();
+    }
+
+    private void setRecyclerviewFunction() {
+        //Item点击事件
+        mPortraitAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 Portrait portrait = (Portrait) adapter.getItem(position);
                 AppHelper.showPicGallery(PicListByCategoryActivity.this, portrait);
             }
         });
+        //加载更多
+        mPortraitAdapter.setAutoLoadMoreSize(1);
+        mPortraitAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
+            @Override
+            public void onLoadMoreRequested() {
+                if (page < Long.valueOf(picTag.tag_page_num)) {
+                    page++;
+                    requstDataByPage(page);
+                } else {
+                    mPortraitAdapter.loadMoreEnd();
+                }
+            }
+        }, mRecyclerView);
     }
 
     private void requstDataByPage(int page) {
@@ -79,6 +97,7 @@ public class PicListByCategoryActivity extends BaseMvpActivity<PicPresenter> imp
     public void getPortraitList(List<Portrait> list) {
         mPortraitList.addAll(list);
         mRecyclerView.getAdapter().notifyDataSetChanged();
+        mPortraitAdapter.loadMoreComplete();
     }
 
     @Override
