@@ -1,4 +1,4 @@
-package com.syc.fastdev.pic;
+package com.syc.fastdev.pic.adapter;
 
 import android.app.Activity;
 import android.content.Context;

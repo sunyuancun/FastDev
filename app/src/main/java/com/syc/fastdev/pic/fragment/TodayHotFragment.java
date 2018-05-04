@@ -1,4 +1,4 @@
-package com.syc.fastdev.pic;
+package com.syc.fastdev.pic.fragment;
 
 
 import android.os.Bundle;
@@ -17,6 +17,9 @@ import com.example.basecore.mvp.modal.PicTag;
 import com.example.basecore.mvp.modal.Portrait;
 import com.syc.fastdev.R;
 import com.syc.fastdev.helper.AppHelper;
+import com.syc.fastdev.pic.PicPresenter;
+import com.syc.fastdev.pic.PicView;
+import com.syc.fastdev.pic.adapter.PortraitAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

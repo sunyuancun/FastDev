@@ -25,9 +25,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".pic.PicListByCategoryActivity"
+            android:name=".pic.activity.PicListByCategoryActivity"
             android:label="common"></activity>
-        <activity android:name=".pic.PicGalleryActivity"></activity>
+        <activity android:name=".pic.activity.PicGalleryActivity"></activity>
     </application>
 
 </manifest>

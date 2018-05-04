@@ -1,4 +1,4 @@
-package com.syc.fastdev.pic;
+package com.syc.fastdev.pic.fragment;
 
 
 import android.os.Bundle;

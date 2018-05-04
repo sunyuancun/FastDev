@@ -1,4 +1,4 @@
-package com.syc.fastdev.pic;
+package com.syc.fastdev.pic.activity;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
@@ -17,6 +17,8 @@ import com.example.basecore.mvp.modal.PicTag;
 import com.example.basecore.mvp.modal.Portrait;
 import com.example.basecore.util.ui.widgte.imageview.ImageTouchView;
 import com.syc.fastdev.R;
+import com.syc.fastdev.pic.PicPresenter;
+import com.syc.fastdev.pic.PicView;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

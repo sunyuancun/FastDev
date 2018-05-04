@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.syc.fastdev.pic.PicClassifyFragment">
+    tools:context="com.syc.fastdev.pic.fragment.PicClassifyFragment">
 
     <com.moxun.tagcloudlib.view.TagCloudView
         android:id="@+id/tag_cloud_view"

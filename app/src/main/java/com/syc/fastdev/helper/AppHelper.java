@@ -5,7 +5,7 @@ import android.content.Intent;
 
 import com.example.basecore.mvp.modal.PicTag;
 import com.example.basecore.mvp.modal.Portrait;
-import com.syc.fastdev.pic.PicGalleryActivity;
+import com.syc.fastdev.pic.activity.PicGalleryActivity;
 
 /**
  * Created by Administrator on 2018/4/4.

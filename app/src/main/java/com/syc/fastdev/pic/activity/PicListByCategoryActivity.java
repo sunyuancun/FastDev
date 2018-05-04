@@ -1,11 +1,8 @@
-package com.syc.fastdev.pic;
+package com.syc.fastdev.pic.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -13,10 +10,11 @@ import com.example.basecore.mvp.activity.BaseMvpActivity;
 import com.example.basecore.mvp.modal.Article;
 import com.example.basecore.mvp.modal.PicTag;
 import com.example.basecore.mvp.modal.Portrait;
-import com.example.basecore.util.log.LogUtil;
-import com.example.basecore.util.ui.widgte.titlebar.BGATitleBar;
 import com.syc.fastdev.R;
 import com.syc.fastdev.helper.AppHelper;
+import com.syc.fastdev.pic.PicPresenter;
+import com.syc.fastdev.pic.PicView;
+import com.syc.fastdev.pic.adapter.PortraitAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

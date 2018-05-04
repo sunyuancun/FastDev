@@ -5,9 +5,9 @@ import android.support.v4.app.Fragment;
 
 import com.syc.fastdev.main.ViewPagerFragmentAdapter;
 import com.syc.fastdev.news.HotFragment;
-import com.syc.fastdev.pic.MeiPicFragment;
-import com.syc.fastdev.pic.PicClassifyFragment;
-import com.syc.fastdev.pic.TodayHotFragment;
+import com.syc.fastdev.pic.fragment.MeiPicFragment;
+import com.syc.fastdev.pic.fragment.PicClassifyFragment;
+import com.syc.fastdev.pic.fragment.TodayHotFragment;
 import com.syc.fastdev.video.VideoFragment;
 
 import java.util.HashMap;

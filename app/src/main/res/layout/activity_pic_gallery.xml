@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    tools:context="com.syc.fastdev.pic.PicGalleryActivity">
+    tools:context="com.syc.fastdev.pic.activity.PicGalleryActivity">
 
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager"
