@@ -23,7 +23,10 @@ import com.syc.fastdev.pic.adapter.TextTagsAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PicClassifyFragment extends BaseMvpFragment<PicPresenter> implements PicView {
+public class
+
+
+PicClassifyFragment extends BaseMvpFragment<PicPresenter> implements PicView {
 
     TagCloudView tagCloudView;
     List<PicTag> mTagList = new ArrayList<>();

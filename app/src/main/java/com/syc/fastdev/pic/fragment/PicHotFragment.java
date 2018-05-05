@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TodayHotFragment extends BaseMvpFragment<PicPresenter> implements PicView {
+public class PicHotFragment extends BaseMvpFragment<PicPresenter> implements PicView {
     private int page = 1;
     private String totalPage;
     private RecyclerView mRecyclerView;

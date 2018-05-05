@@ -30,14 +30,25 @@
             android:text="分类"
             android:textColor="@color/white"
             android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/setting_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|bottom"
+            android:paddingBottom="10dp"
+            android:text="设置"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
     </LinearLayout>
 
     <ImageView
         android:id="@+id/nav_indicator"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="5dp"
         android:layout_gravity="bottom"
         android:contentDescription="指示器"
         android:gravity="center"
-        android:src="@drawable/bottom_line" />
+        android:src="@drawable/bottom_line_shape" />
 </FrameLayout>

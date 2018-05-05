@@ -3,6 +3,7 @@ package com.syc.fastdev.pic.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,8 +11,11 @@ import android.view.ViewGroup;
 
 import com.example.basecore.base.fragment.BaseLazyFragment;
 import com.example.basecore.util.ui.widgte.navigation.NavigationBar;
+import com.syc.fastdev.FragmentFactory;
 import com.syc.fastdev.R;
-import com.syc.fastdev.main.ViewPagerFragmentAdapter;
+import com.syc.fastdev.ViewPagerFragmentAdapter;
+
+import java.util.ArrayList;
 
 public class MeiPicFragment extends BaseLazyFragment implements NavigationBar.NavigationBarClickCallBack {
 
@@ -25,6 +29,8 @@ public class MeiPicFragment extends BaseLazyFragment implements NavigationBar.Na
 
     @Override
     protected void initFragmentData() {
+        ArrayList<Fragment> fragments = FragmentFactory.getInstance().createPicFragments();
+        view_pager.setAdapter(new ViewPagerFragmentAdapter(getFragmentManager(), fragments));
     }
 
     @Override
@@ -33,8 +39,8 @@ public class MeiPicFragment extends BaseLazyFragment implements NavigationBar.Na
         navigationBar = rootView.findViewById(R.id.magic_indicator);
         navigationBar.mNavigationBarClickCallBack = this;
         view_pager = rootView.findViewById(R.id.view_pager);
-        view_pager.setAdapter(new ViewPagerFragmentAdapter(getFragmentManager(), ViewPagerFragmentAdapter.Type_MeiTu));
         view_pager.addOnPageChangeListener(navigationBar);
+        view_pager.setOffscreenPageLimit(10);
         return rootView;
     }
 
