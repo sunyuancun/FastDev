@@ -44,7 +44,7 @@ public class PicListByCategoryActivity extends BaseMvpActivity<PicPresenter> imp
 
     private void initView() {
         requstDataByPage(page);
-        mRecyclerView = findViewById(R.id.list);
+        mRecyclerView = (RecyclerView) findViewById(R.id.list);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         mPortraitAdapter = new PortraitAdapter(this, R.layout.item_of_portrait, mPortraitList);

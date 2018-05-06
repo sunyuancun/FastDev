@@ -50,7 +50,7 @@ public class PicGalleryActivity extends BaseMvpActivity<PicPresenter> implements
     }
 
     private void initView() {
-        viewPager = findViewById(R.id.view_pager);
+        viewPager = (ViewPager) findViewById(R.id.view_pager);
         viewPager.setOffscreenPageLimit(10);
         viewPager.setAdapter(new ImageViewPagerAdapter(PicGalleryActivity.this, picInfos));
     }
