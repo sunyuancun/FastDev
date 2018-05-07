@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="bg">#ffffff</color>
+    <color name="bg">#eeeeee</color>
+    <color name="white">#ffffff</color>
+    <color name="pink">#f0ebeb</color>
+
 
     <color name="icon_normal_color">#8a8a8a</color>
     <color name="icon_selected_color">#d81e06</color>

@@ -9,26 +9,26 @@ import android.os.Message;
 import com.example.basecore.base.BaseHandler;
 import com.syc.fastdev.R;
 
-public class SplashActivity extends Activity {
+public class SplashActivity extends Activity implements BaseHandler.BaseHandlerCallBack {
     private final int MSGONE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        handler.sendEmptyMessageDelayed(MSGONE, 1000);
+        handler.sendEmptyMessageDelayed(MSGONE,3000);
     }
 
-    private Handler handler = new BaseHandler<>(new BaseHandler.BaseHandlerCallBack() {
-        @Override
-        public void callBack(Message msg) {
-            if (msg.what == MSGONE) {
-                Intent in = new Intent(SplashActivity.this, MainActivity.class);
-                SplashActivity.this.startActivity(in);
-                finish();
-            }
+    private Handler handler = new BaseHandler<>(this);
 
+
+    @Override
+    public void callBack(Message msg) {
+        if (msg.what == MSGONE) {
+            Intent in = new Intent(SplashActivity.this, MainActivity.class);
+            SplashActivity.this.startActivity(in);
+            finish();
         }
-    });
+    }
 
 }

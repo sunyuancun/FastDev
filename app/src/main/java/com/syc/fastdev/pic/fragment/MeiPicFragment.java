@@ -30,7 +30,7 @@ public class MeiPicFragment extends BaseLazyFragment implements NavigationBar.Na
     @Override
     protected void initFragmentData() {
         ArrayList<Fragment> fragments = FragmentFactory.getInstance().createPicFragments();
-        view_pager.setAdapter(new ViewPagerFragmentAdapter(getFragmentManager(), fragments));
+        view_pager.setAdapter(new ViewPagerFragmentAdapter(getChildFragmentManager(), fragments));
     }
 
     @Override

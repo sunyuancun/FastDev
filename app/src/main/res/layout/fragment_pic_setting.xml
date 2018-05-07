@@ -1,13 +1,62 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    android:background="@color/bg"
     tools:context="com.syc.fastdev.pic.fragment.PicSettingFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:clickable="true"
+        android:id="@+id/setting_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="60dp"
+        android:background="@drawable/bg_textview"
+        android:drawableLeft="@mipmap/icon_setting"
+        android:drawablePadding="20dp"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:text="更多美图" />
 
-</FrameLayout>
+    <TextView
+        android:clickable="true"
+        android:id="@+id/share_view"
+        android:background="@drawable/bg_textview"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@mipmap/icon_share"
+        android:drawablePadding="20dp"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:text="推荐分享" />
+
+    <TextView
+        android:clickable="true"
+        android:id="@+id/feed_view"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_textview"
+        android:drawableLeft="@mipmap/feed_back"
+        android:drawablePadding="20dp"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:text="发送反馈" />
+
+    <TextView
+        android:clickable="true"
+        android:id="@+id/about_view"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_textview"
+        android:drawableLeft="@mipmap/icon_about"
+        android:drawablePadding="20dp"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:text="关于我们" />
+
+</LinearLayout>
