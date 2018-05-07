@@ -13,6 +13,10 @@ import com.syc.fastdev.pic.activity.PicGalleryActivity;
 
 public class AppHelper {
 
+    public static  final  String  AliYun_AppKey =  "24878807";
+    public static  final  String  AliYun_AppSecret = "fb4a32c51e25723661d4308b9b960179";
+
+
     public static void startPicListByCategoryActivity(Context context, Class cls, PicTag tag) {
         Intent intent = new Intent(context, cls);
         intent.putExtra("PicTag", tag);
