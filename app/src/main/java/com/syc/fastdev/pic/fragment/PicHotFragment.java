@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,11 +16,16 @@ import com.example.basecore.mvp.fragment.BaseMvpFragment;
 import com.example.basecore.mvp.modal.Article;
 import com.example.basecore.mvp.modal.PicTag;
 import com.example.basecore.mvp.modal.Portrait;
+import com.example.basecore.util.event.SetPicDataEvent;
 import com.syc.fastdev.R;
 import com.syc.fastdev.helper.AppHelper;
 import com.syc.fastdev.pic.PicPresenter;
 import com.syc.fastdev.pic.PicView;
 import com.syc.fastdev.pic.adapter.PortraitAdapter;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +39,23 @@ public class PicHotFragment extends BaseMvpFragment<PicPresenter> implements Pic
     private RecyclerView mRecyclerView;
     private List<Portrait> mPortraitList = new ArrayList<>();
     PortraitAdapter mPortraitAdapter;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN) //在ui线程执行
+    public void onSetPicDataEvent(SetPicDataEvent event) {
+        Log.e("PicHotFragment", "event---->" );
+    }
 
     @Override
     protected void initFragmentPrepare() {

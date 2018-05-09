@@ -8,6 +8,7 @@ import com.example.basecore.net.exception.ApiException;
 import com.example.basecore.net.service.PicService;
 import com.example.basecore.util.log.LogUtil;
 import com.example.basecore.util.ui.ToastUtil;
+import com.syc.fastdev.helper.AppHelper;
 
 import java.util.List;
 
@@ -25,12 +26,8 @@ public class PicPresenter extends BasePresenter<PicView> {
         super(mvpView);
     }
 
-    private String ONE_ARTICLE_URL = "http://beautyreport.file.alimmdn.com/v4/";
-    private String PIC_PORTRAIT_LIST_URL = "http://beautyreport.file.alimmdn.com/v4/list_5/";
-    private String PIC_TAG_URL = "http://beautyreport.file.alimmdn.com/v4/list_5/mzitu_album_list";
-
     public void getPicTagList() {
-        PicService.getActiveList(PIC_TAG_URL)
+        PicService.getActiveList(AppHelper.PIC_TAG_URL)
                 .subscribeOn(Schedulers.io()) // 指定 subscribe() 发生在 IO 线程
                 .observeOn(AndroidSchedulers.mainThread()) // 指定 Subscriber 的回调发生在主线程
                 .subscribe(new Subscriber<List<PicTag>>() {
@@ -54,7 +51,7 @@ public class PicPresenter extends BasePresenter<PicView> {
 
 
     public void getPortraitListByTag(String url) {
-        String rightUrl = PIC_PORTRAIT_LIST_URL + url;
+        String rightUrl = AppHelper.PIC_PORTRAIT_LIST_URL + url;
         PicService.getPortraitListByTag(rightUrl)
                 .subscribeOn(Schedulers.io()) // 指定 subscribe() 发生在 IO 线程
                 .observeOn(AndroidSchedulers.mainThread()) // 指定 Subscriber 的回调发生在主线程
@@ -78,7 +75,7 @@ public class PicPresenter extends BasePresenter<PicView> {
     }
 
     public void getArticle(String album_address) {
-        String rightUrl = ONE_ARTICLE_URL + album_address;
+        String rightUrl = AppHelper.ONE_ARTICLE_URL + album_address;
         PicService.getArticle(rightUrl)
                 .subscribeOn(Schedulers.io()) // 指定 subscribe() 发生在 IO 线程
                 .observeOn(AndroidSchedulers.mainThread()) // 指定 Subscriber 的回调发生在主线程

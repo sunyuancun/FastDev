@@ -1,8 +1,9 @@
-package com.syc.fastdev.main;
+package com.syc.fastdev;
 
 import android.app.Application;
 
 import com.alibaba.sdk.android.feedback.impl.FeedbackAPI;
+import com.example.basecore.cache.CacheManager;
 import com.syc.fastdev.helper.AppHelper;
 
 /**
