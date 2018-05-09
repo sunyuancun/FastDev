@@ -1,10 +1,8 @@
-package com.syc.fastdev;
+package com.syc.fastdev.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-
-import com.syc.fastdev.FragmentFactory;
 
 import java.util.ArrayList;
 

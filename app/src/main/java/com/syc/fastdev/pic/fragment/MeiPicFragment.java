@@ -11,9 +11,9 @@ import android.view.ViewGroup;
 
 import com.example.basecore.base.fragment.BaseLazyFragment;
 import com.example.basecore.util.ui.widgte.navigation.NavigationBar;
-import com.syc.fastdev.FragmentFactory;
+import com.syc.fastdev.helper.FragmentFactory;
 import com.syc.fastdev.R;
-import com.syc.fastdev.ViewPagerFragmentAdapter;
+import com.syc.fastdev.adapter.ViewPagerFragmentAdapter;
 
 import java.util.ArrayList;
 

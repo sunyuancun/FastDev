@@ -1,4 +1,4 @@
-package com.syc.fastdev;
+package com.syc.fastdev.helper;
 
 
 import android.support.v4.app.Fragment;
