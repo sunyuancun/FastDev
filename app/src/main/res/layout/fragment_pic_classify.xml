@@ -1,14 +1,16 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context="com.syc.fastdev.pic.fragment.PicClassifyFragment">
 
     <com.moxun.tagcloudlib.view.TagCloudView
         android:id="@+id/tag_cloud_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         app:autoScrollMode="uniform"
         app:darkColor="@color/tagDark"
         app:lightColor="@color/tagLight"
@@ -16,4 +18,11 @@
         app:scrollSpeed="2" />
 
 
-</FrameLayout>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-1526835825353538/3971204337"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

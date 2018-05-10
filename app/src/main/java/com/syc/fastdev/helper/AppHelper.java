@@ -8,6 +8,10 @@ import android.support.v4.app.FragmentActivity;
 
 import com.example.basecore.mvp.modal.PicTag;
 import com.example.basecore.mvp.modal.Portrait;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.syc.fastdev.main.AboutUsActivity;
 import com.syc.fastdev.pic.activity.PicGalleryActivity;
 
@@ -17,12 +21,27 @@ import com.syc.fastdev.pic.activity.PicGalleryActivity;
 
 public class AppHelper {
 
+    public static final String GOOGLE_ADMOB_APP_ID = "ca-app-pub-1526835825353538~4448473212";
+    public static final String Google_Banner_id_PicClassify = "ca-app-pub-1526835825353538/3971204337";
+    public static final String Google_Banner_id_PicGralley = "ca-app-pub-1526835825353538/7403059174";
+    public static final String Google_Interstitial_id = "ca-app-pub-1526835825353538/5408409088";
     public static final String AliYun_AppKey = "24878807";
     public static final String AliYun_AppSecret = "fb4a32c51e25723661d4308b9b960179";
 
     public static String ONE_ARTICLE_URL = "http://beautyreport.file.alimmdn.com/v4/";
     public static String PIC_PORTRAIT_LIST_URL = "http://beautyreport.file.alimmdn.com/v4/list_5/";
     public static String PIC_TAG_URL = "http://beautyreport.file.alimmdn.com/v4/list_5/mzitu_album_list";
+
+
+    public static void initGooglrAds(Context context) {
+        MobileAds.initialize(context, GOOGLE_ADMOB_APP_ID);
+    }
+
+
+    public static void showBannerAdView(AdView adView) {
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+    }
 
 //    public static void setDataUrl(int pos) {
 //        ONE_ARTICLE_URL = "http://beautyreport.file.alimmdn.com/v4/";

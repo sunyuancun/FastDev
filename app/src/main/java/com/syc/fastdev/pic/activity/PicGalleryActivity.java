@@ -16,7 +16,9 @@ import com.example.basecore.mvp.modal.Article;
 import com.example.basecore.mvp.modal.PicTag;
 import com.example.basecore.mvp.modal.Portrait;
 import com.example.basecore.util.ui.widgte.imageview.ImageTouchView;
+import com.google.android.gms.ads.AdView;
 import com.syc.fastdev.R;
+import com.syc.fastdev.helper.AppHelper;
 import com.syc.fastdev.pic.PicPresenter;
 import com.syc.fastdev.pic.PicView;
 
@@ -50,7 +52,9 @@ public class PicGalleryActivity extends BaseMvpActivity<PicPresenter> implements
     }
 
     private void initView() {
+        AdView adView = findViewById(R.id.adView);
         viewPager = (ViewPager) findViewById(R.id.view_pager);
+        AppHelper.showBannerAdView(adView);
         viewPager.setOffscreenPageLimit(10);
         viewPager.setAdapter(new ImageViewPagerAdapter(PicGalleryActivity.this, picInfos));
     }
