@@ -14,7 +14,6 @@ public class DevApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        AppHelper.initGooglrAds(this);
         FeedbackAPI.init(this, AppHelper.AliYun_AppKey, AppHelper.AliYun_AppSecret);
     }
 }

@@ -14,9 +14,6 @@ import com.example.basecore.mvp.modal.Article;
 import com.example.basecore.mvp.modal.PicTag;
 import com.example.basecore.mvp.modal.Portrait;
 import com.example.basecore.util.event.SetPicDataEvent;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.AdView;
 import com.moxun.tagcloudlib.view.TagCloudView;
 import com.syc.fastdev.R;
 import com.syc.fastdev.helper.AppHelper;
@@ -36,7 +33,6 @@ public class
 
 
 PicClassifyFragment extends BaseMvpFragment<PicPresenter> implements PicView {
-    AdView adView;
     TagCloudView tagCloudView;
     List<PicTag> mTagList = new ArrayList<>();
     TextTagsAdapter mTextTagsAdapter;
@@ -63,7 +59,6 @@ PicClassifyFragment extends BaseMvpFragment<PicPresenter> implements PicView {
         View view = inflater.inflate(R.layout.fragment_pic_classify, container, false);
         tagCloudView = view.findViewById(R.id.tag_cloud_view);
         tagCloudView.setBackgroundColor(Color.WHITE);
-        adView = view.findViewById(R.id.adView);
         return view;
     }
 
@@ -74,7 +69,6 @@ PicClassifyFragment extends BaseMvpFragment<PicPresenter> implements PicView {
 
     @Override
     protected void initFragmentData() {
-        AppHelper.showBannerAdView(adView);
         mTextTagsAdapter = new TextTagsAdapter(getActivity(), mTagList);
         tagCloudView.setAdapter(mTextTagsAdapter);
         tagCloudView.setOnTagClickListener(new TagCloudView.OnTagClickListener() {

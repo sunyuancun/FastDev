@@ -8,13 +8,6 @@
     android:orientation="vertical"
     tools:context="com.syc.fastdev.pic.activity.PicGalleryActivity">
 
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        ads:adSize="SMART_BANNER"
-        ads:adUnitId="ca-app-pub-1526835825353538/7403059174" />
-
 
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager"
