@@ -53,6 +53,7 @@ public class PicSettingFragment extends BaseLazyFragment implements View.OnClick
         TextView feed_view = view.findViewById(R.id.feed_view);
         TextView about_view = view.findViewById(R.id.about_view);
         setting_view.setVisibility(View.GONE);
+        share_view.setVisibility(View.GONE);
         setting_view.setOnClickListener(this);
         share_view.setOnClickListener(this);
         feed_view.setOnClickListener(this);

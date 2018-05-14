@@ -8,8 +8,10 @@ import android.support.v4.app.FragmentActivity;
 
 import com.example.basecore.mvp.modal.PicTag;
 import com.example.basecore.mvp.modal.Portrait;
+import com.syc.fastdev.DevApplication;
 import com.syc.fastdev.main.AboutUsActivity;
 import com.syc.fastdev.pic.activity.PicGalleryActivity;
+import com.tencent.bugly.Bugly;
 
 /**
  * Created by Administrator on 2018/4/4.
@@ -23,8 +25,7 @@ public class AppHelper {
     public static String ONE_ARTICLE_URL = "http://beautyreport.file.alimmdn.com/v4/";
     public static String PIC_PORTRAIT_LIST_URL = "http://beautyreport.file.alimmdn.com/v4/list_5/";
     public static String PIC_TAG_URL = "http://beautyreport.file.alimmdn.com/v4/list_5/mzitu_album_list";
-
-
+    private static final String Bugly_APPID = "30d081cfc4";
 
 
 //    public static void setDataUrl(int pos) {
@@ -87,4 +88,7 @@ public class AppHelper {
         context.startActivity(intent);
     }
 
+    public static void initBugly(Context context) {
+        Bugly.init(context, Bugly_APPID, false);
+    }
 }
